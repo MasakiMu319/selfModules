@@ -38,12 +38,13 @@ type RecipesHandler struct {
 
 type Recipe struct {
 	//swagger:ignore
-	ID           primitive.ObjectID `json:"id" bson:"_id"`
-	Name         string             `json:"name" bson:"name"`
-	Tags         []string           `json:"tags" bson:"tags"`
-	Ingredients  []string           `json:"ingredients" bson:"ingredients"`
-	Instructions []string           `json:"instructions" bson:"instructions"`
-	PublishedAt  time.Time          `json:"publishedAt" bson:"publishedAt"`
+	//ID           primitive.ObjectID `json:"id" bson:"_id"`
+	ID           string    `json:"id"`
+	Name         string    `json:"name" bson:"name"`
+	Tags         []string  `json:"tags" bson:"tags"`
+	Ingredients  []string  `json:"ingredients" bson:"ingredients"`
+	Instructions []string  `json:"instructions" bson:"instructions"`
+	PublishedAt  time.Time `json:"publishedAt" bson:"publishedAt"`
 }
 
 func NewRecipesHandler(ctx context.Context, collection *mongo.Collection, redisClient *redis.Client) *RecipesHandler {
